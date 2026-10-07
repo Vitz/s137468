@@ -1,0 +1,15 @@
+name: Prosty Deploy HTML
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pobranie kodu
+        uses: actions/checkout@v4
+
+      - name: Podmiana strony na serwerze
+        run: cp index.html /var/www/html/index.html
